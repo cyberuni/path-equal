@@ -62,11 +62,11 @@ git push
 # create PR
 ```
 
-[codecov-image]: https://codecov.io/gh/unional/path-equal/branch/main/graph/badge.svg
-[codecov-url]: https://codecov.io/gh/unional/path-equal
+[codecov-image]: https://codecov.io/gh/cyberuni/path-equal/branch/main/graph/badge.svg
+[codecov-url]: https://codecov.io/gh/cyberuni/path-equal
 [downloads-image]: https://img.shields.io/npm/dm/path-equal.svg?style=flat
-[github-nodejs]: https://github.com/unional/path-equal/actions/workflows/release.yml/badge.svg
-[github-action-url]: https://github.com/unional/path-equal/actions/workflows/release.yml
+[github-nodejs]: https://github.com/cyberuni/path-equal/actions/workflows/release.yml/badge.svg
+[github-action-url]: https://github.com/cyberuni/path-equal/actions/workflows/release.yml
 [npm-image]: https://img.shields.io/npm/v/path-equal.svg?style=flat
 [npm-url]: https://npmjs.org/package/path-equal
 [vscode-image]: https://img.shields.io/badge/vscode-ready-green.svg
