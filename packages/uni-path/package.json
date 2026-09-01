@@ -36,12 +36,11 @@
 		"coverage": "jest --coverage --maxWorkers=60%",
 		"depcheck": "depcheck",
 		"dev": "jest --watch",
-		"lint": "eslint --ext=ts,js .",
 		"nuke": "pnpm clean && rimraf node_modules",
 		"size": "size-limit",
 		"test:watch": "jest --watch",
 		"test": "jest",
-		"verify": "npm-run-all -p build depcheck lint coverage -p size"
+		"verify": "npm-run-all -p build depcheck coverage -p size"
 	},
 	"dependencies": {
 		"path-equal": "workspace:^"

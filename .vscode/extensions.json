@@ -1,6 +1,6 @@
 {
 	"recommendations": [
-		"dbaeumer.vscode-eslint",
+		"biomejs.biome",
 		"editorconfig.editorconfig",
 		"davidanson.vscode-markdownlint",
 		"unional.vscode-sort-package-json",
