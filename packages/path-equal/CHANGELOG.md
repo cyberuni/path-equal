@@ -1,3 +1,5 @@
+# path-equal
+
 ## [1.2.5](https://github.com/unional/path-equal/compare/v1.2.4...v1.2.5) (2022-11-27)
 
 

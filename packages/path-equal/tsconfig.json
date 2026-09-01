@@ -2,7 +2,7 @@
 	"extends": "./tsconfig.node16.json",
 	"typedocOptions": {
 		"customTitle": "Determine if two file paths are equal across platforms",
-		"titleLink": "https://github.com/unional/path-equal",
+		"titleLink": "https://github.com/cyberuni/path-equal",
 		"entryPoints": ["./ts/index.ts"]
 	}
 }

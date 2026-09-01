@@ -2,13 +2,13 @@
 	"name": "path-equal",
 	"version": "1.2.5",
 	"description": "Determine two file paths are equal",
-	"homepage": "https://github.com/unional/path-equal",
+	"homepage": "https://github.com/cyberuni/path-equal",
 	"bugs": {
-		"url": "https://github.com/unional/path-equal/issues"
+		"url": "https://github.com/cyberuni/path-equal/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/unional/path-equal.git",
+		"url": "https://github.com/cyberuni/path-equal.git",
 		"directory": "packages/path-equal"
 	},
 	"license": "MIT",
