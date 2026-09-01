@@ -1,3 +1,27 @@
 {
-	"extends": ["github>unional/renovate-preset"]
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": ["github>unional/renovate-preset"],
+	"description": [
+		"Local overrides that belong in unional/renovate-preset once it carries the canonical body.",
+		"Without them nothing merges bot PRs here: the preset has no automerge policy, and the",
+		"Mergify rules this repo used to rely on asked for a squash merge, which the repo has",
+		"disallowed since the merge settings baseline landed — so they had already stopped working."
+	],
+	"dependencyDashboard": true,
+	"automerge": true,
+	"automergeType": "pr",
+	"platformAutomerge": true,
+	"rebaseWhen": "behind-base-branch",
+	"minimumReleaseAge": "1 day",
+	"packageRules": [
+		{
+			"description": "Majors break builds in ways CI catches but a human should choose to absorb.",
+			"matchUpdateTypes": ["major"],
+			"automerge": false
+		}
+	],
+	"vulnerabilityAlerts": {
+		"description": "Shortened, not removed: a malicious fix release is exactly what an instant merge would swallow.",
+		"minimumReleaseAge": "1 day"
+	}
 }
