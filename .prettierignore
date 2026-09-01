@@ -1,9 +1,0 @@
-cjs/
-coverage/
-esm/
-fixtures/
-lib/
-*.json
-*.yml
-*.yaml
-CHANGELOG.md
