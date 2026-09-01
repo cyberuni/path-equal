@@ -1,7 +1,8 @@
 {
-	"name": "uni-path",
-	"customTitle": "Universal path module",
+	"name": "path-equal",
+	"customTitle": "Determine if two file paths are equal across platforms",
 	"titleLink": "https://github.com/cyberuni/path-equal",
 	"entryPointStrategy": "packages",
-	"entryPoints": ["packages/path-equal"]
+	"entryPoints": ["packages/path-equal"],
+	"includeVersion": true
 }

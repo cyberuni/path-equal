@@ -1,14 +1,9 @@
 ignores:
+  # Type-only; depcheck cannot see `types` in tsconfig.
   - '@types/node'
-  - "@commitlint/*"
-  - '@repobuddy/jest'
-  - "@semantic-release/*"
-  - "@size-limit/preset-small-lib"
-  - "@types/jest"
-  - "@typescript-eslint/parser"
-  - jest-*
-  - rimraf # depcheck issue
-  - semantic-release
-  - ts-jest
-  - typedoc
-  - typedoc-plugin-extras
+  # size-limit resolves its preset by name from .size-limit.json.
+  - '@size-limit/preset-small-lib'
+  # depcheck misparses rimraf's bin-only usage in `clean` / `nuke`.
+  - rimraf
+  # vitest coverage provider, selected by name in vitest.config.ts.
+  - '@vitest/coverage-v8'

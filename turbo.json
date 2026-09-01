@@ -3,23 +3,23 @@
 	"tasks": {
 		"build": {
 			"dependsOn": ["^build"],
-			"inputs": ["fixtures", "ts", "tsconfig.*", "package.json"]
+			"inputs": ["fixtures", "ts", "tsdown.config.*", "tsconfig.*", "package.json"],
+			"outputs": ["cjs/**", "esm/**"]
 		},
 		"clean": {
 			"cache": false
 		},
 		"coverage": {
 			"dependsOn": ["build"],
-			"inputs": ["fixtures", "ts", "jest.config.*", "tsconfig.*", "package.json"]
+			"inputs": ["fixtures", "ts", "vitest.config.*", "tsconfig.*", "package.json"],
+			"outputs": ["coverage/**"]
 		},
 		"depcheck": {
 			"dependsOn": ["build"]
 		},
 		"dev": {
-			"cache": false
-		},
-		"lint": {
-			"dependsOn": ["^build"]
+			"cache": false,
+			"persistent": true
 		},
 		"nuke": {
 			"cache": false
@@ -30,19 +30,11 @@
 		},
 		"test": {
 			"dependsOn": ["build"],
-			"inputs": ["fixtures", "ts", "jest.config.*", "tsconfig.*", "package.json"]
+			"inputs": ["fixtures", "ts", "vitest.config.*", "tsconfig.*", "package.json"]
 		},
-		"test:electron": {
-			"dependsOn": ["build"],
-			"inputs": ["fixtures", "ts", "jest.config.*", "tsconfig.*", "package.json"]
-		},
-		"test:jsdom": {
-			"dependsOn": ["build"],
-			"inputs": ["fixtures", "ts", "jest.config.*", "tsconfig.*", "package.json"]
-		},
-		"test:nodejs": {
-			"dependsOn": ["build"],
-			"inputs": ["fixtures", "ts", "jest.config.*", "tsconfig.*", "package.json"]
+		"typecheck": {
+			"dependsOn": ["^build"],
+			"inputs": ["ts", "tsconfig.*", "tsdown.config.*", "vitest.config.*", "package.json"]
 		}
 	}
 }

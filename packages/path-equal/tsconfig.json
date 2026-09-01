@@ -1,5 +1,20 @@
 {
-	"extends": "./tsconfig.node16.json",
+	"compilerOptions": {
+		"forceConsistentCasingInFileNames": true,
+		"isolatedModules": true,
+		"lib": ["es2019"],
+		"module": "node16",
+		"moduleResolution": "node16",
+		"newLine": "LF",
+		"noEmit": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"target": "es2019",
+		"types": ["node"]
+	},
+	"include": ["ts", "types", "tsdown.config.ts", "vitest.config.ts"],
 	"typedocOptions": {
 		"customTitle": "Determine if two file paths are equal across platforms",
 		"titleLink": "https://github.com/cyberuni/path-equal",

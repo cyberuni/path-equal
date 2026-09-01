@@ -2,10 +2,9 @@ packages:
   - '!packages/uni-path'
   - packages/*
 allowBuilds:
-  '@swc/core': true
-  core-js: true
+  # size-limit's estimator. `@swc/core`, `core-js` and `unrs-resolver` left with jest
+  # and eslint; nothing in the tree pulls them any more.
   esbuild: true
-  unrs-resolver: true
 overrides:
   cross-spawn@<6.0.6: '>=6.0.6'
   minimatch@<3.1.4: '>=3.1.4 <4'

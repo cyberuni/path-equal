@@ -1,4 +1,4 @@
-import { expect, it } from '@jest/globals'
+import { expect, it } from 'vitest'
 import { pathEqual } from './index.js'
 
 it('path with same style passes', () => {
