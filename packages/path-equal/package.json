@@ -1,6 +1,6 @@
 {
 	"name": "path-equal",
-	"version": "1.2.5",
+	"version": "1.2.6",
 	"description": "Determine two file paths are equal",
 	"homepage": "https://github.com/cyberuni/path-equal",
 	"bugs": {

@@ -1,5 +1,13 @@
 # path-equal
 
+## 1.2.6
+
+### Patch Changes
+
+- 0d4e3e1: Move the release pipeline to GitHub OIDC trusted publishing on `cyberuni`, removing the
+  `NPM_TOKEN` and `CI_GITHUB_TOKEN` dependency, and point the package metadata at the new
+  repository home.
+
 ## [1.2.5](https://github.com/unional/path-equal/compare/v1.2.4...v1.2.5) (2022-11-27)
 
 
