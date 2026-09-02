@@ -5,13 +5,18 @@ allowBuilds:
   # size-limit's estimator. `@swc/core`, `core-js` and `unrs-resolver` left with jest
   # and eslint; nothing in the tree pulls them any more.
   esbuild: true
+# All overrides below are deliberately bounded within the major they patch — a
+# selector clears a vulnerable range, and the target stays inside that same
+# major (or, for a pre-1.0 package, the equivalent minor) so clearing an
+# advisory can never silently carry the tree across a major it wasn't asked
+# to move to.
 overrides:
-  cross-spawn@<6.0.6: '>=6.0.6'
+  cross-spawn@<6.0.6: '^6.0.6'
   minimatch@<3.1.4: '>=3.1.4 <4'
-  minimatch@>=9.0.0 <9.0.7: '<11'
-  lodash@<4.17.24: '>=4.17.24'
-  brace-expansion@<1.1.13: '<6'
-  tmp@<0.2.6: '>=0.2.6'
+  minimatch@>=9.0.0 <9.0.7: '^9.0.7'
+  lodash@<4.17.24: '^4.17.24'
+  brace-expansion@<1.1.13: '^1.1.18'
+  tmp@<0.2.6: '^0.2.6'
   # Dev-tree advisories with no upgrade path: every parent is already on its latest
   # release, so bumping a direct dependency reaches none of them. `path-equal` declares no
   # runtime dependencies, so none of this ships to consumers — Dependabot's `runtime`
