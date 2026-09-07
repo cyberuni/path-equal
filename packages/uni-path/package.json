@@ -33,32 +33,27 @@
 		"build": "run-p build:esm",
 		"build:esm": "tsc",
 		"clean": "rimraf coverage esm *.tsbuildinfo",
-		"coverage": "jest --coverage --maxWorkers=60%",
+		"coverage": "vitest run --coverage",
 		"depcheck": "depcheck",
-		"dev": "jest --watch",
+		"dev": "vitest",
 		"nuke": "pnpm clean && rimraf node_modules",
 		"size": "size-limit",
-		"test:watch": "jest --watch",
-		"test": "jest",
+		"test:watch": "vitest",
+		"test": "vitest run",
 		"verify": "npm-run-all -p build depcheck coverage -p size"
 	},
 	"dependencies": {
 		"path-equal": "workspace:^"
 	},
 	"devDependencies": {
-		"@jest/globals": "^30.0.0",
-		"@repobuddy/jest": "^5.0.0",
 		"@size-limit/preset-small-lib": "^13.0.0",
 		"@types/node": "^24.0.0",
+		"@vitest/coverage-v8": "^4.1.11",
 		"depcheck": "^1.4.3",
-		"jest": "^30.0.0",
-		"jest-watch-suspend": "^1.1.2",
-		"jest-watch-toggle-config-2": "^2.1.0",
-		"jest-watch-typeahead": "^3.0.0",
 		"npm-run-all2": "^9.0.0",
 		"rimraf": "^6.0.0",
 		"size-limit": "^13.0.0",
-		"ts-jest": "^29.0.5",
-		"typescript": "^5.0.0"
+		"typescript": "^5.0.0",
+		"vitest": "^4.1.11"
 	}
 }
