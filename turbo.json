@@ -3,7 +3,7 @@
 	"tasks": {
 		"build": {
 			"dependsOn": ["^build"],
-			"inputs": ["fixtures", "ts", "tsdown.config.*", "tsconfig.*", "package.json"],
+			"inputs": ["fixtures", "src", "tsdown.config.*", "tsconfig.*", "package.json"],
 			"outputs": ["cjs/**", "esm/**"]
 		},
 		"clean": {
@@ -11,7 +11,7 @@
 		},
 		"coverage": {
 			"dependsOn": ["build"],
-			"inputs": ["fixtures", "ts", "vitest.config.*", "tsconfig.*", "package.json"],
+			"inputs": ["fixtures", "src", "vitest.config.*", "tsconfig.*", "package.json"],
 			"outputs": ["coverage/**"]
 		},
 		"depcheck": {
@@ -26,15 +26,15 @@
 		},
 		"size": {
 			"dependsOn": ["build"],
-			"inputs": ["fixtures", "ts", ".size-limit.*", "tsconfig.*", "package.json"]
+			"inputs": ["fixtures", "src", ".size-limit.*", "tsconfig.*", "package.json"]
 		},
 		"test": {
 			"dependsOn": ["build"],
-			"inputs": ["fixtures", "ts", "vitest.config.*", "tsconfig.*", "package.json"]
+			"inputs": ["fixtures", "src", "vitest.config.*", "tsconfig.*", "package.json"]
 		},
 		"typecheck": {
 			"dependsOn": ["^build"],
-			"inputs": ["ts", "tsconfig.*", "tsdown.config.*", "vitest.config.*", "package.json"]
+			"inputs": ["src", "tsconfig.*", "tsdown.config.*", "vitest.config.*", "package.json"]
 		}
 	}
 }

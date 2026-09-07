@@ -3,10 +3,10 @@
 	"name": "@unional/path-equal",
 	"version": "1.2.5",
 	"exports": {
-		".": "./ts/index.ts"
+		".": "./src/index.ts"
 	},
 	"publish": {
-		"include": ["license", "readme.md", "ts"],
-		"exclude": ["ts/*.spec.ts"]
+		"include": ["license", "readme.md", "src"],
+		"exclude": ["src/*.spec.ts"]
 	}
 }
