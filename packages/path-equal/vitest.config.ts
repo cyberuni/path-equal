@@ -1,12 +1,14 @@
+import { nodeTestPreset } from '@repobuddy/vitest/config/node'
 import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
+	// The preset supplies the include and coverage globs. `includeGeneralTests`
+	// picks up the plain `*.spec.ts` names this package uses — without it the
+	// preset only matches the platform-suffixed `*.spec.node.ts` form.
+	plugins: [nodeTestPreset({ includeGeneralTests: true })],
 	test: {
-		include: ['ts/**/*.spec.ts'],
 		coverage: {
 			provider: 'v8',
-			include: ['ts/**/*.ts'],
-			exclude: ['ts/**/*.spec.ts'],
 			reporter: ['text', 'lcov'],
 			// The suite already covers every line and branch. Enforcing that is the point —
 			// a coverage report nobody gates on only tells you after the fact.

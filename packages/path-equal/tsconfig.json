@@ -14,10 +14,10 @@
 		"target": "es2019",
 		"types": ["node"]
 	},
-	"include": ["ts", "types", "tsdown.config.ts", "vitest.config.ts"],
+	"include": ["src", "types", "tsdown.config.ts", "vitest.config.ts"],
 	"typedocOptions": {
 		"customTitle": "Determine if two file paths are equal across platforms",
 		"titleLink": "https://github.com/cyberuni/path-equal",
-		"entryPoints": ["./ts/index.ts"]
+		"entryPoints": ["./src/index.ts"]
 	}
 }

@@ -10,12 +10,12 @@
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"outDir": "esm",
-		"rootDir": "ts",
+		"rootDir": "src",
 		"skipLibCheck": true,
 		"strict": true,
 		"target": "ES2019"
 	},
-	"include": ["ts", "types"],
+	"include": ["src", "types"],
 	"references": [
 		{
 			"path": "../path-equal"

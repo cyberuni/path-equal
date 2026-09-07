@@ -8,7 +8,7 @@ import { defineConfig } from 'tsdown'
 //
 // `outExtensions` is load-bearing: without it tsdown writes `.mjs` / `.d.mts`.
 const shared = {
-	entry: { index: 'ts/index.ts' },
+	entry: { index: 'src/index.ts' },
 	// Preserves the per-module shape `tsc` emitted, rather than bundling to one file.
 	unbundle: true,
 	dts: { sourcemap: true },
