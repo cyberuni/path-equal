@@ -28,7 +28,7 @@ overrides:
   # entry that no longer matched anything in the tree.
   js-yaml@<4.3.1: '>=4.3.1 <5'
   # GHSA-cvhw-v6h6-4wpc (fast-uri), via ajv
-  fast-uri@<3.1.5: '>=3.1.5 <4'
+  fast-uri@<3.1.5: '<5'
   # GHSA-7fh5-64p2-3v2j (postcss), via vite
   postcss@<8.5.23: '>=8.5.23 <9'
   # GHSA-v6h2-p8h4-qcjw (brace-expansion), via glob/minimatch
