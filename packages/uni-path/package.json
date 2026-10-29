@@ -47,7 +47,7 @@
 	},
 	"devDependencies": {
 		"@size-limit/preset-small-lib": "^13.0.0",
-		"@types/node": "^24.0.0",
+		"@types/node": "^26.0.0",
 		"@vitest/coverage-v8": "^4.1.11",
 		"depcheck": "^1.4.3",
 		"npm-run-all2": "^9.0.0",
