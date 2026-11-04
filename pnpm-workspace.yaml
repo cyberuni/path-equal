@@ -32,7 +32,7 @@ overrides:
   # GHSA-7fh5-64p2-3v2j (postcss), via vite
   postcss@<8.5.23: '>=8.5.23 <9'
   # GHSA-v6h2-p8h4-qcjw (brace-expansion), via glob/minimatch
-  brace-expansion@>=2.0.0 <2.1.4: '>=2.1.4 <3'
+  brace-expansion@>=2.0.0 <2.1.4: '<6'
 
 # Supply-chain soak: refuse packages published less than 24h ago, so a compromised
 # release has a window to be caught and unpublished before it reaches a build.
