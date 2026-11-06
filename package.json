@@ -32,7 +32,7 @@
 		"turbo": "^2.10.12",
 		"typedoc": "^0.28.20",
 		"typedoc-plugin-extras": "^4.0.1",
-		"typescript": "^5.9.3"
+		"typescript": "^7.0.0"
 	},
 	"packageManager": "pnpm@12.18.0"
 }
