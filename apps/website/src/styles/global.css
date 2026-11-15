@@ -133,3 +133,39 @@ html {
 code:not(pre code) {
 	border-radius: 6px;
 }
+
+/* Benchmark comparison */
+.benchmark-summary {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1px;
+	margin: 1.5rem 0 2rem;
+	overflow: hidden;
+	border: 1px solid var(--linear-border);
+	border-radius: 12px;
+	background: var(--linear-border);
+}
+
+.benchmark-stat {
+	display: grid;
+	gap: 0.25rem;
+	padding: 1rem 1.1rem;
+	background: var(--sl-color-bg);
+}
+
+.benchmark-stat strong {
+	color: var(--sl-color-white);
+	font-size: 1.35rem;
+	letter-spacing: -0.02em;
+}
+
+.benchmark-stat span {
+	color: var(--sl-color-gray-3);
+	font-size: 0.8rem;
+}
+
+@media (max-width: 640px) {
+	.benchmark-summary {
+		grid-template-columns: 1fr;
+	}
+}

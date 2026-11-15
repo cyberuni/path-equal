@@ -32,6 +32,7 @@ export default defineConfig({
 					label: 'Guides',
 					items: [
 						{ label: 'Path normalization', slug: 'guides/normalization' },
+						{ label: 'Benchmark comparison', slug: 'guides/benchmarks' },
 						{ label: 'Comparison limits', slug: 'guides/limits' },
 					],
 				},
