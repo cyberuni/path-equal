@@ -12,10 +12,10 @@ allowBuilds:
 # to move to.
 overrides:
   cross-spawn@<6.0.6: '^6.0.6'
-  minimatch@<3.1.4: '>=3.1.4 <4'
-  minimatch@>=9.0.0 <9.0.7: '^9.0.7'
+  minimatch@<3.1.4: '<12'
+  minimatch@>=9.0.0 <9.0.7: '^11.0.0'
   lodash@<4.17.24: '^4.17.24'
-  brace-expansion@<1.1.13: '^1.1.18'
+  brace-expansion@<1.1.13: '^5.0.0'
   tmp@<0.2.6: '^0.2.6'
   # Dev-tree advisories with no upgrade path: every parent is already on its latest
   # release, so bumping a direct dependency reaches none of them. `path-equal` declares no
@@ -32,7 +32,7 @@ overrides:
   # GHSA-7fh5-64p2-3v2j (postcss), via vite
   postcss@<8.5.23: '>=8.5.23 <9'
   # GHSA-v6h2-p8h4-qcjw (brace-expansion), via glob/minimatch
-  brace-expansion@>=2.0.0 <2.1.4: '>=2.1.4 <3'
+  brace-expansion@>=2.0.0 <2.1.4: '<6'
 
 # Supply-chain soak: refuse packages published less than 24h ago, so a compromised
 # release has a window to be caught and unpublished before it reaches a build.
@@ -44,3 +44,8 @@ overrides:
 # explicitly so the enforcement does not depend on that inference.
 minimumReleaseAge: 1440
 minimumReleaseAgeStrict: true
+minimumReleaseAgeExclude:
+  # Renovate security update: brace-expansion@5.0.12
+  - brace-expansion@5.0.12
+  # Renovate security update: minimatch@11.0.4
+  - minimatch@11.0.4
