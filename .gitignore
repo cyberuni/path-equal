@@ -47,3 +47,7 @@ node_modules
 
 # repo files
 docs/
+
+# Starlight docs live under an app, while the repository ignores generated docs directories.
+!apps/website/src/content/docs/
+!apps/website/src/content/docs/**

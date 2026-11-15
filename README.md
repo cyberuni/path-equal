@@ -16,3 +16,13 @@ This repository contains packages that are related to path detection and manipul
 [path-equal-downloads-image]: https://img.shields.io/npm/dm/path-equal.svg?style=flat
 [path-equal-npm-image]: https://img.shields.io/npm/v/path-equal.svg?style=flat
 [path-equal-npm-url]: https://npmjs.org/package/path-equal
+
+## Documentation
+
+Read the [path-equal documentation](https://cyberuni.github.io/path-equal/) for installation, normalization behavior, and API reference.
+
+## Apps
+
+| App | Command |
+| --- | --- |
+| `apps/website` | `pnpm web dev` |
