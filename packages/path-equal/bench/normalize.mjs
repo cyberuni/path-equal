@@ -64,7 +64,7 @@ const paths = [
 	'/a/../../b',
 	'./src/index.ts/',
 ]
-const iterations = Number(process.argv[2]) || 1_000_000
+const iterations = Number(process.argv.slice(2).find((arg) => arg !== '--')) || 1_000_000
 
 for (const [name, normalize] of [
 	['original-regex', normalizeOriginal],

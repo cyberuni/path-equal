@@ -273,6 +273,9 @@ importers:
       npm-run-all2:
         specifier: ^9.0.3
         version: 9.0.3
+      path-equal-1.2.8:
+        specifier: npm:path-equal@1.2.8
+        version: path-equal@1.2.8
       rimraf:
         specifier: ^6.1.3
         version: 6.1.3
@@ -3319,6 +3322,9 @@ packages:
 
   path-browserify@1.0.1:
     resolution: {integrity: sha512-b7uo2UCUOYZcnF/3ID0lulOJi/bafxa1xPe7ZPsammBSpjSWQkjNxlt635YGS2MiR9GjvuXCtz2emr3jbsz98g==}
+
+  path-equal@1.2.8:
+    resolution: {integrity: sha512-rCJWMlXlk9lZ2FEllgvh2IgPj/kxMx2sOeqtFNLO8dxEY0I4hBTa+ZW3JAsgeiTe8vL4MifATVDwxF9nGUI7HQ==}
 
   path-key@3.1.1:
     resolution: {integrity: sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==}
@@ -7170,6 +7176,8 @@ snapshots:
   parse-passwd@1.0.0: {}
 
   path-browserify@1.0.1: {}
+
+  path-equal@1.2.8: {}
 
   path-key@3.1.1: {}
 
