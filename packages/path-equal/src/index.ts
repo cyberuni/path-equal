@@ -6,21 +6,25 @@ export function pathEqual(actual: string, expected: string): boolean {
 }
 
 function normalizePath(path: string): string {
-	const replace: [RegExp, string][] = [
-		[/\\/g, '/'],
-		[/(\w):/, '/$1'],
-		[/(\w+)\/\.\.\/?/g, ''],
-		[/^\.\//, ''],
-		[/\/\.\//, '/'],
-		[/\/\.$/, ''],
-		[/\/$/, ''],
-	]
+	let normalized = path.replace(/\\/g, '/')
+	if (normalized.length > 1 && normalized[1] === ':') {
+		normalized = `/${normalized[0]}${normalized.slice(2)}`
+	}
+	if (!normalized.includes('.') && !normalized.endsWith('/')) return normalized
 
-	replace.forEach((array) => {
-		while (array[0].test(path)) {
-			path = path.replace(array[0], array[1])
+	const segments: string[] = []
+
+	for (const segment of normalized.split('/')) {
+		if (segment === '..') {
+			if (segments.length > 0 && segments[segments.length - 1] !== '..') {
+				segments.pop()
+			} else if (!normalized.startsWith('/')) {
+				segments.push(segment)
+			}
+		} else if (segment !== '' && segment !== '.') {
+			segments.push(segment)
 		}
-	})
+	}
 
-	return path
+	return `${normalized.startsWith('/') ? '/' : ''}${segments.join('/')}` || '.'
 }

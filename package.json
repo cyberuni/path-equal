@@ -12,7 +12,7 @@
 		"lint": "biome lint .",
 		"nuke": "pnpm --no-bail --filter=* nuke && pnpm --no-bail nuke:local",
 		"nuke:local": "rimraf node_modules",
-		"path-equal": "pnpm --filter path-equal",
+		"pe": "pnpm --filter path-equal",
 		"prepare": "husky",
 		"release": "pnpm build && changeset publish",
 		"size": "turbo run size",
