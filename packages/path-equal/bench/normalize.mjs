@@ -1,39 +1,42 @@
 import { performance } from 'node:perf_hooks'
 
-function normalizeBaseline(path) {
-	const normalized = path.replace(/\\/g, '/').replace(/(\w):/, '/$1')
-	const segments = []
-
-	for (const segment of normalized.split('/')) {
-		if (segment === '..') {
-			if (segments.length > 0 && segments[segments.length - 1] !== '..') {
-				segments.pop()
-			} else if (!normalized.startsWith('/')) {
-				segments.push(segment)
-			}
-		} else if (segment !== '' && segment !== '.') {
-			segments.push(segment)
-		}
-	}
-
-	return `${normalized.startsWith('/') ? '/' : ''}${segments.join('/')}` || '.'
+function isDrive(path) {
+	const letter = path.charCodeAt(0) | 32
+	return letter >= 97 && letter <= 122 && path[1] === ':' && (path.length === 2 || path[2] === '/')
 }
 
-function normalizeFast(path) {
-	let normalized = path.replace(/\\/g, '/')
-	if (normalized.length > 1 && normalized[1] === ':') {
-		normalized = `/${normalized[0]}${normalized.slice(2)}`
-	}
-	if (!normalized.includes('.') && !normalized.endsWith('/')) return normalized
+function isUnc(path) {
+	return path[0] === '/' && path[1] === '/' && path.length > 2 && path[2] !== '/'
+}
 
+function toPosix(path) {
+	const normalized = path.replace(/\\/g, '/')
+	return isDrive(normalized) ? `/${normalized[0].toLowerCase()}${normalized.slice(2)}` : normalized
+}
+
+function resolveSegments(normalized) {
+	const absolute = normalized.startsWith('/')
 	const segments = []
 	for (const segment of normalized.split('/')) {
 		if (segment === '..') {
 			if (segments.length > 0 && segments[segments.length - 1] !== '..') segments.pop()
-			else if (!normalized.startsWith('/')) segments.push(segment)
+			else if (!absolute) segments.push(segment)
 		} else if (segment !== '' && segment !== '.') segments.push(segment)
 	}
-	return `${normalized.startsWith('/') ? '/' : ''}${segments.join('/')}` || '.'
+	const prefix = isUnc(normalized) ? '//' : absolute ? '/' : ''
+	return `${prefix}${segments.join('/')}` || '.'
+}
+
+function normalizeBaseline(path) {
+	return resolveSegments(toPosix(path))
+}
+
+function normalizeFast(path) {
+	const normalized = toPosix(path)
+	if (normalized !== '' && !normalized.includes('.') && !normalized.includes('//') && !normalized.endsWith('/')) {
+		return normalized
+	}
+	return resolveSegments(normalized)
 }
 
 function normalizeOriginal(path) {

@@ -1,54 +1,132 @@
-import { expect, it } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { pathEqual } from './index.js'
 
-it('path with same style passes', () => {
-	expect(pathEqual('a', 'a')).toBe(true)
-	expect(pathEqual('a/b', 'a/b')).toBe(true)
-	expect(pathEqual('a\\b', 'a\\b')).toBe(true)
+type Case = [actual: string, expected: string]
+
+function expectEqual(actual: string, expected: string, result: boolean) {
+	expect(pathEqual(actual, expected)).toBe(result)
+	expect(pathEqual(expected, actual)).toBe(result)
+}
+
+describe('identical strings', () => {
+	it.each<Case>([
+		['a', 'a'],
+		['a/b', 'a/b'],
+		['a\\b', 'a\\b'],
+	])('%j equals %j', (a, b) => expectEqual(a, b, true))
 })
 
-it('same style different value fails', () => {
-	expect(pathEqual('a', 'b')).toBe(false)
+describe('different paths', () => {
+	it.each<Case>([
+		['a', 'b'],
+		['/a', 'a'],
+		['A', 'a'],
+		['../a', 'a'],
+		['../..', '..'],
+		['/D/foo', '/d/foo'],
+	])('%j does not equal %j', (a, b) => expectEqual(a, b, false))
 })
 
-it('separator: \\ matches /', () => {
-	expect(pathEqual('a/b', 'a\\b')).toBe(true)
-	expect(pathEqual('a/b/c', 'a\\b\\c')).toBe(true)
-	expect(pathEqual('a\\b', 'a/b')).toBe(true)
-	expect(pathEqual('a\\b\\c', 'a/b/c')).toBe(true)
-	expect(pathEqual('a\\b\\c\\', 'a/b/c')).toBe(true)
+describe('separators', () => {
+	it.each<Case>([
+		['a/b', 'a\\b'],
+		['a/b/c', 'a\\b\\c'],
+		['a\\b\\c\\', 'a/b/c'],
+		['a/', 'a'],
+		['a//b', 'a/b'],
+		['a//b/.', 'a/b'],
+		['a\\\\b', 'a/b'],
+	])('%j equals %j', (a, b) => expectEqual(a, b, true))
 })
 
-it('drive letter: /d/foo should match d:\\foo', () => {
-	expect(pathEqual('/d/foo', 'd:\\foo')).toBe(true)
+describe('root', () => {
+	it.each<Case>([
+		['/', '\\'],
+		['/', '//'],
+		['///a', '/a'],
+		['/..', '/'],
+	])('%j equals %j', (a, b) => expectEqual(a, b, true))
 })
 
-it(`with '.' (current dir)`, () => {
-	expect(pathEqual('./a', 'a')).toBe(true)
-	expect(pathEqual('a/b/.', 'a/b')).toBe(true)
-	expect(pathEqual('a/b/./', 'a/b')).toBe(true)
-	expect(pathEqual('a/b/./c', 'a/b/c')).toBe(true)
-	expect(pathEqual('a/b/./c/d/./e', 'a/b/c/d/e')).toBe(true)
+describe('drive letters', () => {
+	it.each<Case>([
+		['/d/foo', 'd:\\foo'],
+		['/d/foo', 'd:/foo'],
+		['/d/foo', 'D:\\foo'],
+		['d:\\foo', 'D:/foo'],
+		['/d', 'd:'],
+		['/d', 'd:\\'],
+		['/', 'd:\\..'],
+	])('%j equals %j', (a, b) => expectEqual(a, b, true))
+
+	it.each<Case>([
+		['c:foo', '/cfoo'],
+		['c:foo', '/c/foo'],
+		['a:b', '/ab'],
+		['1:\\foo', '/1/foo'],
+	])('%j does not equal %j', (a, b) => expectEqual(a, b, false))
 })
 
-it(`with '..' (parent dir)`, () => {
-	expect(pathEqual('a/../b', 'b')).toBe(true)
-	expect(pathEqual('a/b/../', 'a')).toBe(true)
-	expect(pathEqual('a/b/..', 'a')).toBe(true)
-	expect(pathEqual('a/ba/../c/../d', 'a/d')).toBe(true)
-	expect(pathEqual('../a', '../a')).toBe(true)
-	expect(pathEqual('../a/b/..', '../a')).toBe(true)
-	expect(pathEqual('dir/sub-dir/../file.txt', 'dir/file.txt')).toBe(true)
-	expect(pathEqual('node_modules/pkg-name/../other', 'node_modules/other')).toBe(true)
-	expect(pathEqual('src/v1.2/../x', 'src/x')).toBe(true)
-	expect(pathEqual('m/h/d/c/../a/b/../../../..', 'm')).toBe(true)
-	expect(pathEqual('k/m/h/d/c/../a/b/../../../../..', 'k')).toBe(true)
-	expect(pathEqual('k/m/h/d/c/../a/b/../../../../h/d', 'k/m/h/d')).toBe(true)
-	expect(pathEqual('k\\m\\h\\d\\c\\..\\a\\b\\..\\..\\..\\..\\h\\d', 'k/m/h/d')).toBe(true)
-	expect(pathEqual('../../a', '../../a')).toBe(true)
-	expect(pathEqual('/a/../../b', '/b')).toBe(true)
-	expect(pathEqual('/a/..', '/')).toBe(true)
-	expect(pathEqual('a/../../b', '../b')).toBe(true)
-	expect(pathEqual('a/..', '.')).toBe(true)
-	expect(pathEqual('a/b/../..', '.')).toBe(true)
+describe('UNC paths', () => {
+	it.each<Case>([
+		['\\\\server\\share', '//server/share'],
+		['\\\\server\\share\\', '//server/share'],
+	])('%j equals %j', (a, b) => expectEqual(a, b, true))
+
+	it.each<Case>([
+		['\\\\server\\share', '/server/share'],
+		['\\\\server\\share\\', '/server/share'],
+		['//a', '/a'],
+	])('%j does not equal %j', (a, b) => expectEqual(a, b, false))
+})
+
+describe(`'.' (current dir)`, () => {
+	it.each<Case>([
+		['./a', 'a'],
+		['a/b/.', 'a/b'],
+		['a/b/./', 'a/b'],
+		['a/b/./c', 'a/b/c'],
+		['a/b/./c/d/./e', 'a/b/c/d/e'],
+		['', '.'],
+		['', './'],
+	])('%j equals %j', (a, b) => expectEqual(a, b, true))
+})
+
+describe(`'..' (parent dir)`, () => {
+	it.each<Case>([
+		['a/../b', 'b'],
+		['a/b/../', 'a'],
+		['a/b/..', 'a'],
+		['a/ba/../c/../d', 'a/d'],
+		['../a', '../a'],
+		['../a/b/..', '../a'],
+		['..', '../'],
+		['dir/sub-dir/../file.txt', 'dir/file.txt'],
+		['node_modules/pkg-name/../other', 'node_modules/other'],
+		['src/v1.2/../x', 'src/x'],
+		['m/h/d/c/../a/b/../../../..', 'm'],
+		['k/m/h/d/c/../a/b/../../../../..', 'k'],
+		['k/m/h/d/c/../a/b/../../../../h/d', 'k/m/h/d'],
+		['k\\m\\h\\d\\c\\..\\a\\b\\..\\..\\..\\..\\h\\d', 'k/m/h/d'],
+		['../../a', '../../a'],
+		['/a/../../b', '/b'],
+		['/a/..', '/'],
+		['a/../../b', '../b'],
+		['a/..', '.'],
+		['a/b/../..', '.'],
+	])('%j equals %j', (a, b) => expectEqual(a, b, true))
+})
+
+describe('dot-like names stay names', () => {
+	it.each<Case>([
+		['./.git', '.git'],
+		['a/..b', 'a/..b'],
+		['a/.../b', 'a/.../b'],
+	])('%j equals %j', (a, b) => expectEqual(a, b, true))
+
+	it.each<Case>([
+		['a/.../b', 'a/b'],
+		['a/..b', 'b'],
+		['a/.b', 'a/b'],
+	])('%j does not equal %j', (a, b) => expectEqual(a, b, false))
 })
