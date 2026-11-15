@@ -63,7 +63,11 @@ const paths = [
 ]
 const iterations = Number(process.argv[2]) || 1_000_000
 
-for (const [name, normalize] of [['original-regex', normalizeOriginal], ['baseline', normalizeBaseline], ['fast', normalizeFast]]) {
+for (const [name, normalize] of [
+	['original-regex', normalizeOriginal],
+	['baseline', normalizeBaseline],
+	['fast', normalizeFast],
+]) {
 	if (name !== 'original-regex') {
 		for (const path of paths) {
 			if (normalizeBaseline(path) !== normalizeFast(path)) throw new Error(`Mismatch for ${path}`)
@@ -77,5 +81,8 @@ for (const [name, normalize] of [['original-regex', normalizeOriginal], ['baseli
 		checksum += normalize(paths[iteration % paths.length]).length
 	}
 
-	console.log(`${name}: ${((performance.now() - start) * 1_000_000 / iterations).toFixed(1)} ns/op (checksum ${checksum})`)
+	// biome-ignore lint/suspicious/noConsole: benchmark results are printed to the terminal
+	console.log(
+		`${name}: ${(((performance.now() - start) * 1_000_000) / iterations).toFixed(1)} ns/op (checksum ${checksum})`,
+	)
 }
