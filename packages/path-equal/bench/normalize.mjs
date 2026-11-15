@@ -81,8 +81,7 @@ for (const [name, normalize] of [
 		checksum += normalize(paths[iteration % paths.length]).length
 	}
 
-	// biome-ignore lint/suspicious/noConsole: benchmark results are printed to the terminal
-	console.log(
+	console.info(
 		`${name}: ${(((performance.now() - start) * 1_000_000) / iterations).toFixed(1)} ns/op (checksum ${checksum})`,
 	)
 }
