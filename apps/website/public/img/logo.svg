@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="path-equal">
+  <path class="s" d="M17 63V17h46"/>
+  <path class="s" d="M111 65v46H65"/>
+  <path class="s" d="M40 48h48"/>
+  <path class="s" d="M40 80h48"/>
+  <style>.s{fill:none;stroke:#000;stroke-width:10;stroke-linecap:round;stroke-linejoin:round}@media (prefers-color-scheme:dark){.s{stroke:#fff}}</style>
+</svg>

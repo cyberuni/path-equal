@@ -1,0 +1,29 @@
+---
+title: path-equal
+description: Compare file paths regardless of platform separators.
+template: splash
+hero:
+  tagline: Compare paths across Windows and POSIX conventions.
+  actions:
+    - text: Get started
+      link: /path-equal/getting-started/introduction/
+      icon: right-arrow
+    - text: API reference
+      link: /path-equal/reference/
+      icon: document
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components'
+
+<CardGrid stagger>
+  <Card title="Normalize separators" icon="seti:terminal">
+    Treat `/` and `\\` as equivalent separators on every platform.
+  </Card>
+  <Card title="Compare normalized paths" icon="link">
+    Resolve `.` and `..` segments before comparing path strings.
+  </Card>
+  <Card title="String comparison" icon="open-book">
+    Pass two path strings and get a boolean result.
+  </Card>
+</CardGrid>

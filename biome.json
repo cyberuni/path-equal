@@ -8,11 +8,17 @@
 	},
 	"files": {
 		"includes": [
+			"!**/.astro",
 			"!packages/*/.turbo",
 			"!packages/*/cjs",
 			"!packages/*/coverage",
 			"!packages/*/esm",
 			"!skills-lock.json"
 		]
+	},
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
+		}
 	}
 }

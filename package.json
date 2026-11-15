@@ -12,14 +12,15 @@
 		"lint": "biome lint .",
 		"nuke": "pnpm --no-bail --filter=* nuke && pnpm --no-bail nuke:local",
 		"nuke:local": "rimraf node_modules",
-		"path-equal": "pnpm --filter path-equal",
+		"pe": "pnpm --filter path-equal",
 		"prepare": "husky",
 		"release": "pnpm build && changeset publish",
 		"size": "turbo run size",
 		"test": "turbo run test",
 		"typecheck": "turbo run typecheck",
 		"verify": "biome ci . && turbo run build typecheck coverage depcheck size",
-		"version": "changeset version"
+		"version": "changeset version",
+		"web": "pnpm --filter=website"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.5.11",

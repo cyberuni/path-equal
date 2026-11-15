@@ -39,6 +39,7 @@
 	],
 	"scripts": {
 		"build": "tsdown",
+		"bench": "node bench/normalize.mjs",
 		"clean": "rimraf cjs coverage esm *.tsbuildinfo",
 		"coverage": "vitest run --coverage",
 		"cs": "changeset",
@@ -50,7 +51,8 @@
 		"test:watch": "vitest",
 		"test": "vitest run",
 		"typecheck": "tsc",
-		"verify": "npm-run-all -p build depcheck typecheck coverage -p size"
+		"verify": "npm-run-all -p build depcheck typecheck coverage -p size",
+		"w": "vitest"
 	},
 	"devDependencies": {
 		"@repobuddy/vitest": "^2.1.4",
