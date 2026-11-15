@@ -49,4 +49,6 @@ it(`with '..' (parent dir)`, () => {
 	expect(pathEqual('/a/../../b', '/b')).toBe(true)
 	expect(pathEqual('/a/..', '/')).toBe(true)
 	expect(pathEqual('a/../../b', '../b')).toBe(true)
+	expect(pathEqual('a/..', '.')).toBe(true)
+	expect(pathEqual('a/b/../..', '.')).toBe(true)
 })
