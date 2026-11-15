@@ -1,5 +1,23 @@
 # path-equal
 
+## 1.2.9
+
+### Patch Changes
+
+- 2e9e1ec: Fix several normalization inconsistencies:
+  
+  - Repeated separators always collapse (`a//b` equals `a/b`), and an empty path equals `.`.
+  - A drive letter is recognized only at the start of a path and only when a separator or the end of the string follows it. Drive letters compare case-insensitively (`D:\foo` equals `/d/foo`). `c:foo` and `a:b` are no longer rewritten into `/cfoo` and `/ab`.
+  - UNC paths (`\\server\share`) no longer equal `/server/share`.
+- 6941df8: Correctly normalize path segments containing `-` and preserve leading `..` segments when comparing paths.
+- d54fa3e: Move the TypeScript sources from `ts/` to `src/`.
+  
+  The published tarball and the JSR package now carry the sources under `src/`
+  instead of `ts/`. The `exports` map is unchanged, so `import 'path-equal'` and
+  `require('path-equal')` resolve exactly as before; only the path of the shipped
+  `.ts` sources moved.
+- 386b416: Include `CHANGELOG.md` in the published package.
+
 ## 1.2.8
 
 ### Patch Changes
