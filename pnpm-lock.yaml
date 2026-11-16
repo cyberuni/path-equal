@@ -256,8 +256,8 @@ importers:
   packages/path-equal:
     devDependencies:
       '@repobuddy/vitest':
-        specifier: ^2.1.4
-        version: 2.1.4(vitest@4.1.11)
+        specifier: ^3.0.0
+        version: 3.0.2(typescript@5.9.3)(vitest@4.1.11)
       '@size-limit/preset-small-lib':
         specifier: ^13.0.3
         version: 13.0.3(size-limit@13.0.3)
@@ -1325,14 +1325,14 @@ packages:
     peerDependencies:
       '@biomejs/biome': '>= 2'
 
-  '@repobuddy/test@1.0.2':
-    resolution: {integrity: sha512-EeofGgGuvzLee0Ya41H3SDL+sSMG/MtekDDS9wPVpaPaFxHrq+vIzUl8Ls+mchFSBXwifrupRFjVwGYcL+9LZw==}
+  '@repobuddy/test@1.1.3':
+    resolution: {integrity: sha512-NAZ+U8a4Xx0SErJgTI0aSr6On5JFbbpza5X8nqDOiHC06Ojzb4izNv7F7Qf3s9MUkX93dLBV4J+n4Ymy1arCLA==}
 
-  '@repobuddy/vitest@2.1.4':
-    resolution: {integrity: sha512-VaiISKjtyXbpcb4WQiwGMoUTVsZcafc6o7PkU18QHIoHm1ziumlFbJqrMBrHPFDZ0f6qaQoD8AsibvoW9+rqgw==}
+  '@repobuddy/vitest@3.0.2':
+    resolution: {integrity: sha512-p0yTjCOo0K/25GvyZhKLfbuOvNgZaobZBRy8fkWNPnkKwwJkgQkvQV+z8pxC3Tky9aOtQzLRyMorTh6BbbPNfQ==}
     peerDependencies:
-      '@vitest/browser-playwright': ^4.0.15
-      vitest: ^4.0.15
+      '@vitest/browser-playwright': ^5.0.0
+      vitest: ^5.0.0
     peerDependenciesMeta:
       '@vitest/browser-playwright':
         optional: true
@@ -2187,6 +2187,11 @@ packages:
   '@yuku-toolchain/types@0.10.2':
     resolution: {integrity: sha512-sSeo4SSSToiS+sSD+bwn/s94EEcaLJ7tG5LCp8gFYC1G5VzxzX7fqB6m9RU1yMD8KTpu6zdU/I1NlQf8hVBJ9Q==}
 
+  acorn@8.19.0:
+    resolution: {integrity: sha512-oJlA3XiRm7Cyk6qFD2Jn8ak9B7jSy0qy00ADO3+8dpT0LSjFihQYv4C02LFCSYJV3Q37xYwwRy5m+IpIiUzqWw==}
+    engines: {node: '>=0.4.0'}
+    hasBin: true
+
   ajv-draft-04@1.0.0:
     resolution: {integrity: sha512-mv00Te6nmYbRp5DCwclxtt7yV/joXJPGS7nM+97GdxvuttCOfgI3K4U25zboyeX0O+myI8ERluxQe5wljMmVIw==}
     peerDependencies:
@@ -2257,6 +2262,10 @@ packages:
   assertion-error@2.0.1:
     resolution: {integrity: sha512-Izi8RQcffqCeNVgFigKli1ssklIbpHnCYc6AknXGYoB6grJqyeby7jv12JUQgmTAnIDnbck1uxksT4dzN3PWBA==}
     engines: {node: '>=12'}
+
+  assertron@11.7.3:
+    resolution: {integrity: sha512-O2Fe3VTWlXA7XPd7VuUduWR/y523ct1WhGmGwRqT3OX+gNZkQSS0lf2tsMjdBUt1VABZ1dW7MaPr+afbKaFSkg==}
+    engines: {node: '>=20'}
 
   ast-v8-to-istanbul@1.0.5:
     resolution: {integrity: sha512-UPAgKJFSEGMWSDr3LX4tqnAb4f7KGT8O40Tyx8wbYmmZ/yn58lNCm8h3svs3eXgiGd5AXxz8NDOvXWvicq+rJA==}
@@ -2861,6 +2870,9 @@ packages:
     resolution: {integrity: sha512-+Pgi+vMuUNkJyExiMBt5IlFoMyKnr5zhJ4Uspz58WOhBF5QoIZkFyNHIbBAtHwzVAgk5RtndVNsDRN61/mmDqg==}
     engines: {node: '>=12'}
 
+  is-promise@4.0.0:
+    resolution: {integrity: sha512-hvpoI6korhJMnej285dSg6nu1+e6uxs7zG3BYAm5byqDsgJNWwxzM6z6iZiAgQR4TJ30JmBTOwqZUw3WlyH3AQ==}
+
   is-windows@1.0.2:
     resolution: {integrity: sha512-eXK1UInq2bPmjyX6e3VHIzMLobc4J94i4AWn+Hpq3OU5KkrRC96OAcR3PRJ/pGu6m8TRnBHP9dkXQVsT/COVIA==}
     engines: {node: '>=0.10.0'}
@@ -2871,6 +2883,10 @@ packages:
   isexe@4.0.0:
     resolution: {integrity: sha512-FFUtZMpoZ8RqHS3XeXEmHWLA4thH+ZxCv2lOiPIn1Xc7CxrqhWzNSDzD+/chS/zbYezmiwWLdQC09JdQKmthOw==}
     engines: {node: '>=20'}
+
+  iso-error@7.0.1:
+    resolution: {integrity: sha512-mrhIeYR3zebxWXmzQ4UNHXR5pqnbhu4zXQfBu4C0IkLLsyETEMBdhC5p0Bj+QAwMa7XIQj3kaHbrEQ6tNqBH0Q==}
+    engines: {node: '>= 20'}
 
   istanbul-lib-coverage@3.2.0:
     resolution: {integrity: sha512-eOeJ5BHCmHYvQK7xt9GkdHuzuCGS1Y6g9Gvnx3Ym33fz/HpLRYxiS0wHNr+m/MBC8B647Xt608vCDEvhl9c6Mw==}
@@ -3523,6 +3539,9 @@ packages:
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
     hasBin: true
 
+  satisfier@5.4.6:
+    resolution: {integrity: sha512-xsWpHw+7sTgJjBVVJ0GC1MGwMpX4FnTjwwkZuBEjiHxhQFK10GS5Eqeh3RBT/Vp7dXOLlnY0iL5xI/7IEu918g==}
+
   satteri@0.10.5:
     resolution: {integrity: sha512-Ao1LKpAEa9Wdg0otgbVKViZHEq9ebdXe4DMrp3s9vQAU0HNIuHnFEuMuOcm0ZIXyV0Yzxj91NvhLpvXZJO/5ZQ==}
 
@@ -3654,6 +3673,9 @@ packages:
     resolution: {integrity: sha512-NHFiWnAbMJxNNpBwiO7jJVGDuqMxT9/oV8v57RR+fgBQShkJil5inGD8/xWy0hjLyHQyX1tu27QANhlz3KBqCg==}
     engines: {node: '>=6'}
 
+  tersify@4.0.9:
+    resolution: {integrity: sha512-ol/el85CNqFvoRRtn/lxltPf9YVuM+7GD5oJgVXoOOJB2Qtd10CPug9LQvbMdPDUCXqgPHtWkTErL406mWa8Yg==}
+
   tiny-inflate@1.0.3:
     resolution: {integrity: sha512-pkY1fj1cKHb2seWDy0B16HeWyczlJA9/WW3u3c4z/NiWDsO3DOU5D7nhTLE9CF0yXv/QZFY7sEJmj24dK+Rrqw==}
 
@@ -3738,6 +3760,15 @@ packages:
     resolution: {integrity: sha512-AswgMPnpOoaVZHrrSBejETzEbuIA69OVGwfkHwfrY0A23VjWXBANzgq9+OymWOHAIArB7D1+1z498WY8fGg1Jw==}
     hasBin: true
 
+  type-plus@8.0.1:
+    resolution: {integrity: sha512-x1OtyTGuqmmnNu5+iL93KVsHLl6PMeRWUDN8yz+X4f86TuEcXSzX7EAdBK+3CFSp2jyVnQuzvof1Z/3Noc3Dig==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    peerDependencies:
+      typescript: '>= 5.4.0'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   typedoc-plugin-extras@4.0.1:
     resolution: {integrity: sha512-ab3T37ukHCwBjwBJpAcWdxy/XAaLdUyy5pwbgF9WDqCRN0DTJmJPLew9Kv6qrx5qnxiyfe6F4Og+PUp15kJWLw==}
     peerDependencies:
@@ -3808,6 +3839,10 @@ packages:
 
   unist-util-visit@5.2.0:
     resolution: {integrity: sha512-fpsYs/VVoZxfGY9/j3FQpZmN8wdLJaV1Pt38AaJNZu9uKIHcFU3halCdBveEq1HGKO1OEfJY65w1zvoFV1b3qQ==}
+
+  unpartial@1.0.8:
+    resolution: {integrity: sha512-LDZX3wrdUWQdVKLOgouW+fCqNfietx11UzdipDBRsnx1LWKBkv4FpA9OHVeSNz12STLk6oz07dgENEWnHyAgIg==}
+    engines: {node: '>= 20'}
 
   unstorage@1.17.6:
     resolution: {integrity: sha512-gjKtcmn/KwZuJZO9o2sc0esAQnhmTw0LviDHwevTXbJMYs0dRTp8ZEEWXHU0vTpzbN3cA0yxlTeyXssMp3zDqw==}
@@ -5231,12 +5266,18 @@ snapshots:
     dependencies:
       '@biomejs/biome': 2.5.11
 
-  '@repobuddy/test@1.0.2': {}
-
-  '@repobuddy/vitest@2.1.4(vitest@4.1.11)':
+  '@repobuddy/test@1.1.3(typescript@5.9.3)':
     dependencies:
-      '@repobuddy/test': 1.0.2
+      assertron: 11.7.3(typescript@5.9.3)
+    transitivePeerDependencies:
+      - typescript
+
+  '@repobuddy/vitest@3.0.2(typescript@5.9.3)(vitest@4.1.11)':
+    dependencies:
+      '@repobuddy/test': 1.1.3(typescript@5.9.3)
       vitest: 4.1.11(@types/node@26.4.0)(@vitest/coverage-v8@4.1.11)(vite@8.3.8(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.6.1)(yaml@2.9.0))
+    transitivePeerDependencies:
+      - typescript
 
   '@rolldown/binding-android-arm-eabi@1.2.11':
     optional: true
@@ -5882,6 +5923,8 @@ snapshots:
 
   '@yuku-toolchain/types@0.10.2': {}
 
+  acorn@8.19.0: {}
+
   ajv-draft-04@1.0.0(ajv@8.20.0):
     optionalDependencies:
       ajv: 8.20.0
@@ -5931,6 +5974,17 @@ snapshots:
   arrify@2.0.1: {}
 
   assertion-error@2.0.1: {}
+
+  assertron@11.7.3(typescript@5.9.3):
+    dependencies:
+      is-promise: 4.0.0
+      iso-error: 7.0.1
+      path-equal: 1.2.8
+      satisfier: 5.4.6
+      tersify: 4.0.9
+      type-plus: 8.0.1(typescript@5.9.3)
+    transitivePeerDependencies:
+      - typescript
 
   ast-v8-to-istanbul@1.0.5:
     dependencies:
@@ -6641,11 +6695,15 @@ snapshots:
 
   is-plain-obj@4.1.0: {}
 
+  is-promise@4.0.0: {}
+
   is-windows@1.0.2: {}
 
   isexe@2.0.0: {}
 
   isexe@4.0.0: {}
+
+  iso-error@7.0.1: {}
 
   istanbul-lib-coverage@3.2.0: {}
 
@@ -7406,6 +7464,10 @@ snapshots:
       '@rollup/rollup-win32-x64-msvc': 4.68.3
       fsevents: 2.3.3
 
+  satisfier@5.4.6:
+    dependencies:
+      tersify: 4.0.9
+
   satteri@0.10.5:
     dependencies:
       '@types/estree-jsx': 1.0.5
@@ -7583,6 +7645,11 @@ snapshots:
 
   tapable@2.3.4: {}
 
+  tersify@4.0.9:
+    dependencies:
+      acorn: 8.19.0
+      unpartial: 1.0.8
+
   tiny-inflate@1.0.3: {}
 
   tinybench@2.9.0: {}
@@ -7647,6 +7714,12 @@ snapshots:
       '@turbo/linux-arm64': 2.10.12
       '@turbo/windows-64': 2.10.12
       '@turbo/windows-arm64': 2.10.12
+
+  type-plus@8.0.1(typescript@5.9.3):
+    dependencies:
+      unpartial: 1.0.8
+    optionalDependencies:
+      typescript: 5.9.3
 
   typedoc-plugin-extras@4.0.1(typedoc@0.28.20(typescript@5.9.3)):
     dependencies:
@@ -7727,6 +7800,8 @@ snapshots:
       '@types/unist': 3.0.3
       unist-util-is: 6.0.1
       unist-util-visit-parents: 6.1.0
+
+  unpartial@1.0.8: {}
 
   unstorage@1.17.6:
     dependencies:
