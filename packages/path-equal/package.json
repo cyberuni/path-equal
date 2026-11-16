@@ -59,7 +59,7 @@
 		"@repobuddy/vitest": "^3.0.0",
 		"@size-limit/preset-small-lib": "^13.0.3",
 		"@types/node": "^26.4.0",
-		"@vitest/coverage-v8": "^4.1.11",
+		"@vitest/coverage-v8": "^5.0.0",
 		"depcheck": "^1.4.7",
 		"npm-run-all2": "^9.0.3",
 		"path-equal-1.2.8": "npm:path-equal@1.2.8",
@@ -67,6 +67,6 @@
 		"size-limit": "^13.0.3",
 		"tsdown": "^0.23.0",
 		"typescript": "^5.9.3",
-		"vitest": "^4.1.11"
+		"vitest": "^5.0.0"
 	}
 }
