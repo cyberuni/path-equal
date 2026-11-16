@@ -6,7 +6,6 @@
 	"automergeType": "pr",
 	"platformAutomerge": true,
 	"rebaseWhen": "behind-base-branch",
-	"minimumReleaseAge": "1 day",
 	"vulnerabilityAlerts": {
 		"description": "Shortened, not removed: a malicious fix release is exactly what an instant merge would swallow.",
 		"minimumReleaseAge": "1 day"
