@@ -56,7 +56,7 @@
 		"bench:call": "node bench/path-equal.mjs"
 	},
 	"devDependencies": {
-		"@repobuddy/vitest": "^2.1.4",
+		"@repobuddy/vitest": "^3.0.0",
 		"@size-limit/preset-small-lib": "^13.0.3",
 		"@types/node": "^26.4.0",
 		"@vitest/coverage-v8": "^4.1.11",
