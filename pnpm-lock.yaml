@@ -274,8 +274,8 @@ importers:
         specifier: ^9.0.3
         version: 9.0.3
       path-equal-1.2.8:
-        specifier: npm:path-equal@1.2.8
-        version: path-equal@1.2.8
+        specifier: npm:path-equal@1.2.9
+        version: path-equal@1.2.9
       rimraf:
         specifier: ^6.1.3
         version: 6.1.3
@@ -3137,8 +3137,8 @@ packages:
   path-browserify@1.0.1:
     resolution: {integrity: sha512-b7uo2UCUOYZcnF/3ID0lulOJi/bafxa1xPe7ZPsammBSpjSWQkjNxlt635YGS2MiR9GjvuXCtz2emr3jbsz98g==}
 
-  path-equal@1.2.8:
-    resolution: {integrity: sha512-rCJWMlXlk9lZ2FEllgvh2IgPj/kxMx2sOeqtFNLO8dxEY0I4hBTa+ZW3JAsgeiTe8vL4MifATVDwxF9nGUI7HQ==}
+  path-equal@1.2.9:
+    resolution: {integrity: sha512-Haq/ZQIRQUOJVlfJmGO40pNo0PGwXWsoPlxM4k1cMtEFUZFT30gnwWbAGLqqqOAfQb8Nf9hFlhNXr+ahaNfrDw==}
 
   path-key@3.1.1:
     resolution: {integrity: sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==}
@@ -5614,7 +5614,7 @@ snapshots:
     dependencies:
       is-promise: 4.0.0
       iso-error: 7.0.1
-      path-equal: 1.2.8
+      path-equal: 1.2.9
       satisfier: 5.4.6
       tersify: 4.0.9
       type-plus: 8.0.1(typescript@5.9.3)
@@ -6027,6 +6027,7 @@ snapshots:
       '@esbuild/win32-arm64': 0.28.1
       '@esbuild/win32-ia32': 0.28.1
       '@esbuild/win32-x64': 0.28.1
+    optional: true
 
   escalade@3.2.0: {}
 
@@ -6824,7 +6825,7 @@ snapshots:
 
   path-browserify@1.0.1: {}
 
-  path-equal@1.2.8: {}
+  path-equal@1.2.9: {}
 
   path-key@3.1.1: {}
 
